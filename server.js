@@ -13,3 +13,19 @@ var server = app.listen(80, function () {
   console.log('Example app listening on port ', port);
 
 });
+
+
+const { spawn } = require('child_process');
+const X11 = spawn('startx', []);
+
+X11.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+X11.stderr.on('data', (data) => {
+  console.log(`stderr: ${data}`);
+});
+
+X11.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+});
