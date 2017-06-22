@@ -13,7 +13,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-node:6-slim
 RUN apt-get update
 RUN apt-get install xserver-xorg xinit xserver-xorg-video-fbdev
 RUN apt-get install matchbox x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3
-RUN apt-get install chromium browser
+RUN apt-get install chromium-browser
 
 # Defines our working directory in container
 WORKDIR /usr/src/app
