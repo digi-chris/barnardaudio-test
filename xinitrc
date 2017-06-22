@@ -8,18 +8,9 @@ while true; do
 	killall -9 chromium 2>/dev/null;
 	killall -9 matchbox-window-manager 2>/dev/null;
 
-	# Clean out existing profile information
-	rm -rf /home/pi/.cache;
-	rm -rf /home/pi/.config;
-	rm -rf /home/pi/.pki;
-
-	# Generate the bare minimum to keep Chromium happy!
-	mkdir -p /home/pi/.config/chromium/Default
-	sqlite3 /home/pi/.config/chromium/Default/Web\ Data "CREATE TABLE meta(key LONGVARCHAR NOT NULL UNIQUE PRIMARY KEY, value LONGVARCHAR); INSERT INTO meta VALUES('version','46'); CREATE TABLE keywords (foo INTEGER);";
-
 	# Disable DPMS / Screen blanking
-	xset -dpms
-	xset s off
+	#xset -dpms
+	#xset s off
 
 	# Reset the framebuffer's colour-depth
 	fbset -depth $( cat /sys/module/*fb*/parameters/fbdepth );
