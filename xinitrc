@@ -31,7 +31,6 @@ while true; do
 	matchbox-window-manager -use_titlebar no -use_cursor no &
 
 	# Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
-	#chromium-browser  --app=http://my.barnard.audio/ --no-sandbox
-	chromium-browser --no-sandbox --app=https://api.mapbox.com/styles/v1/cbarnard81/cj4461mzr6qzc2sqvjdzccfll.html?title=true&access_token=pk.eyJ1IjoiY2Jhcm5hcmQ4MSIsImEiOiJjajQ0NXdhdmgxN2VxMndzOTFnZnNkanF3In0.BP9IbTEGA9jYBcT7vt6f6Q#6.97/12.771/0.023
+	chromium-browser  --app=http://my.barnard.audio/ --no-sandbox
 
 done;
