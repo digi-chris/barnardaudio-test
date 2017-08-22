@@ -39,5 +39,3 @@ if [ "${MOPIDY_PITFT_ENABLED}" == 'true' ]; then
     mknod /dev/fb1 c $(cat /sys/class/graphics/fb1/dev | tr ':' ' ')
   fi
 fi
-
-mopidy
