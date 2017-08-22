@@ -30,6 +30,7 @@ X11.on('close', (code) => {
   console.log(`child process exited with code ${code}`);
 });
 
+/*
 const mpd = spawn('mopidy', []);
 
 mpd.stdout.on('data', (data) => {
@@ -43,3 +44,4 @@ mpd.stderr.on('data', (data) => {
 mpd.on('close', (code) => {
   console.log(`mpd child process exited with code ${code}`);
 });
+*/
