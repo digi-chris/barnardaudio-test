@@ -25,17 +25,3 @@ enabled = ${MOPIDY_PITFT_ENABLED:-false}
 [youtube]
 enabled = ${MOPIDY_YOUTUBE_ENABLED:-true}
 EOF
-
-# Disable mouse until resin supports the pitft touchscreen
-export SDL_NOMOUSE=1
-
-if [ "${MOPIDY_PITFT_ENABLED}" == 'true' ]; then
-  if [ ! -c /dev/fb1 ]; then
-    modprobe spi-bcm2708
-    modprobe fbtft_device name=pitft verbose=0 rotate=270
-
-    sleep 1
-
-    mknod /dev/fb1 c $(cat /sys/class/graphics/fb1/dev | tr ':' ' ')
-  fi
-fi
